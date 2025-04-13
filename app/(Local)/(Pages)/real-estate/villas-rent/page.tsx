@@ -25,7 +25,7 @@ export default function Villas() {
 
       <div className=' w-[80%] flex flex-col gap-4'>
       {villasRent?.map((data) =>(
-        <Cart data={data} key={data.id} link={`/real-estate/villas-rent/${data.id}`} />
+        <Cart data={data} key={data.id} link={`/real-estate/villas-rent/${data.id}`} cars={false} realEstate={true} />
       ))}
       </div>
       </div>
