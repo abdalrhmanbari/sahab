@@ -25,7 +25,7 @@ export default function HousesRent() {
 
       <div className=' w-[80%] flex flex-col gap-4'>
       {houseRent?.map((data) =>(
-        <Cart data={data} key={data.id} link={`/real-estate/houses-rent/${data.id}`} />
+        <Cart data={data} key={data.id} link={`/real-estate/houses-rent/${data.id}`} cars={false} realEstate={true} />
       ))}
       </div>
       </div>

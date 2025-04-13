@@ -80,7 +80,7 @@ export default function NavBar() {
     </div>
     <div className=' flex flex-col sm:flex-row  justify-between  items-center    '>
       <Link href={"/log-in"} className=' bg-blue-600 hover:bg-blue-700 px-4 py-4 rounded-md text-white'>انشر إعلانك</Link>
-    <Link href={"/log-in"} className=' text-[1rem] font-semibold underline decoration-blue-600 underline-offset-8 hover:no-underline '>تسجيل دخول </Link>
+    <Link href={"/log-in"} className=' text-[1.3rem] font-semibold underline decoration-blue-600 underline-offset-8 hover:no-underline '>تسجيل دخول </Link>
     {/* <button className='  text-black font-bold text-[1.1rem]   hover:text-blue-600'>English</button> */}
 
       <Popover open={open} onOpenChange={setOpen}>
