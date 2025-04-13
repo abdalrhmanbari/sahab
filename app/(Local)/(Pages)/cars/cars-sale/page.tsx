@@ -1,4 +1,4 @@
-import CartCar from '@/app/(Local)/Components/card/cart-car'
+import Cart from '@/app/(Local)/Components/card/cart'
 import { carSale } from '@/app/(Local)/Context/context'
 import Link from 'next/link'
 import React from 'react'
@@ -6,11 +6,11 @@ import React from 'react'
 export default function CarsSale() {
   return (
     <div className='mt-64 flex flex-col items-end gap-4 text-end px-40'>
-         <p className=" text-[0.8rem] text-[#23262AA3] flex flex-row-reverse items-center gap-2 ">
+         <span className=" text-[0.8rem] text-[#23262AA3] flex flex-row-reverse items-center gap-2 ">
         <Link href={"/"}>الصفحة الرئيسية</Link>/ 
         <Link href={"/cars"}>سيارات </Link>/
-        <Link href={"/cars/cars-sale"}>سيارات للبيع </Link>
-      </p>
+        <h1 className=' text-[#222222]'>سيارات للبيع </h1>
+      </span>
       <h1 className=' text-2xl font-semibold mb-2'>سيارات للبيع في سوريا</h1>
       <div className=' flex flex-row-reverse  gap-4 w-full '>
       <div className=' bg-blue-100 flex flex-col gap-2 ps-30 pe-4 py-8 text-end h-fit w-[20%] '>
@@ -22,7 +22,7 @@ export default function CarsSale() {
       </div>
        <div className=' w-[80%] flex flex-col gap-4'>
        {carSale?.map((data) =>(
-        <CartCar data={data} link={`/cars/cars-sale/${data.id}`} key={data.id}/>
+        <Cart data={data} link={`/cars/cars-sale/${data.id}`} key={data.id} cars={true} realEstate={false}/>
        ))}
        </div>
        </div>

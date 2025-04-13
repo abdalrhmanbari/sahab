@@ -1,16 +1,17 @@
 import React from 'react'
-import { carSale } from '../../Context/context'
-import CartCar from '../../Components/card/cart-car'
+import { carRent, carSale } from '../../Context/context'
+
 import Link from 'next/link'
 import SponsoredAd from '../../Components/Advertisement/sponsored-ad'
+import Cart from '../../Components/card/cart'
 
 export default function Cars() {
   return (
     <div className='mt-64 flex flex-col items-end gap-4 text-end px-40'> 
-     <p className=" text-[0.8rem] text-[#23262AA3] flex flex-row-reverse items-center gap-2 ">
+     <span className=" text-[0.8rem] text-[#23262AA3] flex flex-row-reverse items-center gap-2 ">
         <Link href={"/"}>الصفحة الرئيسية</Link>/ 
-        <Link href={"/cars"}>سيارات </Link>
-      </p>
+        <h1 className=' text-[#222222]'>سيارات </h1>
+      </span>
       <h1 className=' text-2xl font-semibold mb-2'>سيارات للبيع والإيجار في سوريا</h1>
       <div className=' flex flex-row-reverse  gap-4 w-full '>
       <div className=' bg-blue-100 flex flex-col gap-2 ps-30 pe-4 py-8 text-end h-fit w-[20%] '>
@@ -22,11 +23,15 @@ export default function Cars() {
       </div>
        <div className=' w-[80%] flex flex-col gap-4'>
        {carSale?.map((data) =>(
-        <CartCar data={data} link={`/cars/${data.id}`} key={data.id}/>
+        <Cart data={data} link={`/cars/cars-sale/${data.id}`} key={data.id} cars={true} realEstate={false}/>
        ))}
              <SponsoredAd/>
+       {carRent?.map((data) =>(
+        <Cart data={data} link={`/cars/cars-rent/${data.id}`} key={data.id} cars={true} realEstate={false}/>
+       ))}
        </div>
        </div>
+         
     </div>
   )
 }
