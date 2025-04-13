@@ -89,7 +89,7 @@ export default function NavBar() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[60%] justify-between"
+          className="w-[60%] justify-between h-[3rem]"
           dir='rtl'
         >
           {value
