@@ -16,12 +16,14 @@ import {
 } from "../Context/context";
 import Card from "../Components/card/card";
 import { CardSlider } from "../Components/Slider/card-slider";
-import AdvertisementSlider from "../Components/Slider/Advertisement-slider";
+import SponsoredAds from "../Components/Slider/sponsored-ads";
+
+
 
 export default function HomePage() {
   return (
     <div className="  sm:px-40 px-4  flex flex-col gap-10  text-end ">
-      <AdvertisementSlider />
+      <SponsoredAds />
       <h1 className=" text-xl font-semibold">الفئات الشائعة</h1>
       <div className="  flex flex-wrap gap-8 justify-around items-end">
         {category?.map((el) => (

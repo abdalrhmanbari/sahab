@@ -10,7 +10,7 @@ import slider2 from "../../Assets/Images/slider1.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-export default function Advertisement() {
+export default function SponsoredAds() {
   return (
     <div>
       <Swiper
@@ -25,7 +25,7 @@ export default function Advertisement() {
         <SwiperSlide>
           <div className=" rounded-[0.4375rem]">
             <Image
-              src={slider2}
+              src={slider1}
               alt="Advertisement"
               className=" rounded-[0.4375rem] w-full h-auto object-cover"
               quality={100}
@@ -35,7 +35,7 @@ export default function Advertisement() {
         <SwiperSlide>
           <div className="  rounded-[0.4375rem]">
             <Image
-              src={slider1}
+              src={slider2}
               alt="Advertisement"
               className=" rounded-[0.4375rem] w-full h-auto object-cover"
               quality={100}
