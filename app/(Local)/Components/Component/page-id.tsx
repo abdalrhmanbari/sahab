@@ -23,21 +23,23 @@ export default function PageId({
 }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="   flex flex-row-reverse  gap-16 ">
+      <div className="   flex sm:flex-row-reverse flex-col  gap-16 ">
         <img
-          alt="real-estate"
+          alt={data?.description}
           src={data?.img}
-          className=" min-w-[45rem] max-w-[45rem]  max-h-[30rem] object-contain rounded-xl bg-blue-50"
+          className=" sm:min-w-[45rem] sm:max-w-[45rem] w-full h-auto  sm:max-h-[30rem] object-cover rounded-xl bg-blue-50"
           loading="lazy"
         />
+        <div className=" hidden sm:block">
         <CardId />
+        </div>
       </div>
       <div className=" w-full border border-gray-100 p-4 flex flex-col gap-4 rounded-md">
         <div className="    flex justify-between">
           <FavoriteIcon />
-          <h1 className="text-blue-600 font-bold flex gap-1 text-[2.2rem]">
+          <h1 className="text-blue-600 font-bold flex gap-1 sm:text-[2.2rem] text-[1.2rem]">
             <span className="  flex items-end text-[0.7rem]">ل.س</span>
-            {data?.price}
+            {data?.price || 0}
           </h1>
         </div>
         <span className=" text-[#222222] font-medium mb-2">
@@ -50,79 +52,65 @@ export default function PageId({
             <Image alt="icon" src={location} className=" w-5 h-5" />
           </span>
           <span className=" text-[0.9rem]">
-            منذ {data.date >= "7" ? "اسبوع" : data.date + "يوم"}{" "}
+            منذ {data?.date >= "7" ? "اسبوع" : data?.date + "يوم"}{" "}
           </span>
         </div>
       </div>
       {realEstate == true ? (
-        <div className=" w-full border border-gray-100 p-4 flex flex-col gap-8 rounded-md">
-          <h1 className=" text-xl font-semibold text-[#23262A]">
-            المواصفات البارزة
-          </h1>
-          <div className=" grid grid-cols-3">
+        <div className=" w-full border border-gray-100 p-4 flex flex-col  gap-8 rounded-md">
+          <h1 className=" text-xl font-semibold text-[#23262A]">المواصفات البارزة</h1>
+          <div className="  flex justify-between items-center gap-4 flex-wrap ">
             <div className=" flex flex-col items-center justify-center">
               <Image alt="icon" src={bed} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                غرف نوم
-              </p>
-              <span className=" font-semibold">{data.bed}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">غرف نوم</p>
+              <span className=" font-semibold">{data?.bed}</span>
             </div>
             <div className=" flex flex-col items-center justify-center">
               <Image alt="icon" src={layout} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                المساحة (م٢)
-              </p>
-              <span className=" font-semibold">{data.bed}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">المساحة (م٢)</p>
+              <span className=" font-semibold">{data?.layout}</span>
             </div>
             <div className=" flex flex-col items-center justify-center">
               <Image alt="icon" src={bathroom} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                حمامات
-              </p>
-              <span className=" font-semibold">{data.bathroom}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">حمامات</p>
+              <span className=" font-semibold">{data?.bathroom}</span>
             </div>
           </div>
         </div>
       ) : null}
       {cars == true ? (
         <div className=" w-full border border-gray-100 p-4 flex flex-col gap-8 rounded-md">
-          <h1 className=" text-xl font-semibold text-[#23262A]">
-            المواصفات البارزة
-          </h1>
-          <div className=" grid grid-cols-4 items-center">
+          <h1 className=" text-xl font-semibold text-[#23262A]">المواصفات البارزة</h1>
+          <div className=" flex justify-between items-center gap-4 flex-wrap ">
             <div className=" flex flex-col items-center justify-center gap-1">
               <Image alt="icon" src={engine} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                المحرك (سي سي){" "}
-              </p>
-              <span className=" font-semibold">{data.engine}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">المحرك (سي سي)</p>
+              <span className=" font-semibold">{data?.engine}</span>
             </div>
             <div className=" flex flex-col items-center justify-center gap-1">
               <Image alt="icon" src={transmission} className=" w-6" />
               <p className=" text-[#23262A] text-sm font-medium mb-2">
                 ناقل الحركة
               </p>
-              <span className=" font-semibold">{data.transmission}</span>
+              <span className=" font-semibold">{data?.transmission}</span>
             </div>
             <div className=" flex flex-col items-center justify-center gap-1">
               <Image alt="icon" src={fuel} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                {" "}
-                نوع الوقود
-              </p>
-              <span className=" font-semibold">{data.fuel}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">نوع الوقود</p>
+              <span className=" font-semibold">{data?.fuel}</span>
             </div>
             <div className=" flex flex-col items-center justify-center gap-1">
               <Image alt="icon" src={road} className=" w-6" />
-              <p className=" text-[#23262A] text-sm font-medium mb-2">
-                {" "}
-                كيلومترات
-              </p>
-              <span className=" font-semibold">{data.speed ? data.speed :"-"}</span>
+              <p className=" text-[#23262A] text-sm font-medium mb-2">كيلومترات</p>
+              <span className=" font-semibold">{data?.speed ? data?.speed :"-"}</span>
             </div>
           </div>
         </div>
       ) : null}
+            <div className=" block sm:hidden " >
+        <CardId />
+        </div>
     </div>
+    
   );
 }

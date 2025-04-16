@@ -8,15 +8,15 @@ export const footerLinks = [
         { title: "فيسبوك", url: "/" },
       ],
     },
-    {
-      title: "شركة",
-      links: [
-        { title: "الأحداث", url: "/" },
-        { title: "مدونة", url: "/" },
-        { title: "بودكاست", url: "/" },
-        { title: "ادعُ صديقًا", url: "/" },
-      ],
-    },
+    // {
+    //   title: "شركة",
+    //   links: [
+    //     { title: "الأحداث", url: "/" },
+    //     { title: "مدونة", url: "/" },
+    //     { title: "بودكاست", url: "/" },
+    //     { title: "ادعُ صديقًا", url: "/" },
+    //   ],
+    // },
   
     {
       title: "عن",
@@ -44,8 +44,8 @@ export const footerLinks = [
     {
       id: 2,
       title: "عقارات",
-      link1: "شقق للبيع",
-      link2: "شقق للإيجار",
+      link1: "منازل للبيع",
+      link2: "منازل للإيجار",
       link3: "كل مافي عقارات",
       Link1:"/real-estate/houses-sale",
       Link2:"/real-estate/houses-sale",
@@ -57,7 +57,7 @@ export const footerLinks = [
       title: "سيارات",
       link1: "سيارات للبيع",
       link2: "سيارات للإيجار",
-      link3: "كل مافي السيارات",
+      link3: "كل مافي  سيارات",
       Link1:"/cars/cars-sale",
       Link2:"/cars/cars-rent",
       Link3:"/cars",
@@ -108,6 +108,7 @@ export const footerLinks = [
       date: 6,
       img: "https://images.pexels.com/photos/36355/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600",
     },
+    
   ];
   export const villasRent = [
     {

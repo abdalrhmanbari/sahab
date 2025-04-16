@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LogIn() {
   return (
-<div className="mt-64  items-end gap-4 text-end  flex min-h-full flex-1 flex-col justify-center px-6  lg:px-8">
+<div className="   gap-4 text-end  flex min-h-full flex-1 flex-col items-center justify-center px-6  lg:px-8 -mt-14 sm:m-0">
           <h2 className="m-auto mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
             تسجيل دخول ل سحاب
           </h2>

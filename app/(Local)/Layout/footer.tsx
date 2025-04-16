@@ -5,11 +5,11 @@ import { footerLinks } from "../Context/context";
 
 export default function Footer() {
   return (
-    <footer className="  container   border-t border-gray-200 flex flex-col text-black-100 mt-14  sm-w-full bottom-0 ">
-      <div className=" flex flex-wrap flex-row-reverse justify-between gap-5 sm:px-40 px-6  py-10 w-full ">
-        <div className="flex flex-col  text-end items-end gap-8">
+    <footer className="     border-t border-gray-200 flex flex-col text-black-100 mt-14  sm-w-full bottom-0 ">
+      <div className=" flex flex-wrap flex-row-reverse justify-between gap-5 2xl:px-40 sm:px-16  py-10 w-full ">
+        <div className="flex flex-col  text-end  items-end gap-8 px-16 ">
           <h1 className="font-bold text-xl ">سحاب</h1>
-          <div className=" text-[0.9rem] text-gray-700 flex flex-col gap-2">
+          <div className=" text-[0.9rem] text-gray-700 flex flex-col gap-2 ">
             سحاب 2025
             <br />
             <span className=" ">تم بواسطة: عبد الرحمن البري</span>
@@ -17,7 +17,7 @@ export default function Footer() {
             &copy; جميع الحقوق محفوظة
           </div>
         </div>
-        <div className="flex-1 w-full flex  text-center flex-wrap max-md:mt-10 gap-20">
+        <div className="   flex items-start justify-start  sm:gap-20 gap-4 gap-y-4  text-center max-md:mt-10 ">
           {footerLinks?.map((link: any) => (
             <div
               key={link.title}
