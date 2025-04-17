@@ -27,7 +27,7 @@ export default function SponsoredAds() {
             <Image
               src={slider1}
               alt="Advertisement"
-              className=" rounded-[0.4375rem] w-full h-auto object-cover"
+              className=" rounded-[0.4375rem] sm:w-full w-[40rem] h-auto object-cover"
               quality={100}
             />
           </div>

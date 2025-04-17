@@ -23,13 +23,15 @@ export default function PageId({
 }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="   flex sm:flex-row-reverse flex-col  gap-16 ">
+      <div className="  w-full  flex sm:flex-row-reverse flex-col gap-4  md:gap-16 ">
+        <div className=" w-full sm:w-[80%]">
         <img
           alt={data?.description}
           src={data?.img}
-          className=" sm:min-w-[45rem] sm:max-w-[45rem] w-full h-auto  sm:max-h-[30rem] object-cover rounded-xl bg-blue-50"
+          className="  w-full h-auto  sm:h-[24rem] object-cover rounded-xl bg-blue-50"
           loading="lazy"
-        />
+          />
+          </div>
         <div className=" hidden sm:block">
         <CardId />
         </div>

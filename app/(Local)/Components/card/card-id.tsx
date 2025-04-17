@@ -5,14 +5,14 @@ import call from "../../Assets/Images/telephone.png"
 import Link from 'next/link'
 export default function CardId() {
   return (
-    <div className=" w-full  border border-gray-100 p-4 flex flex-col  gap-8 justify-around rounded-md">
-    <div className=" flex sm:flex-col gap-4">
+    <div className=" w-full   border border-gray-100 p-4 flex flex-col  gap-8 justify-around rounded-md">
+    <div className=" flex justify-center sm:flex-col gap-4">
       
-    <Link href={"/log-in"} className=" w-fit sm:px-40 px-10 py-4 bg-emerald-100 hover:bg-emerald-200 rounded-md font-black sm:text-[1rem] text-[0.8rem] flex items-center  gap-2 h-fit">واتساب
+    <Link href={"/log-in"} className=" w-fit sm:px-20  lg:px-40 px-10 py-4 bg-emerald-100 hover:bg-emerald-200 rounded-md font-black sm:text-[1rem] text-[0.8rem] flex items-center  gap-2 h-fit">واتساب
             <Image alt="icon" src={whatsapp} className="w-4"/>
           </Link>
      
-          <Link href={"/log-in"} className="w-fit sm:px-40 px-10 py-4 bg-blue-100 hover:bg-blue-200  rounded-md font-black sm:text-[1rem] text-[0.8rem] flex items-center gap-2 h-fit">مكالمة
+          <Link href={"/log-in"} className="w-fit sm:px-20 lg:px-40 px-10 py-4 bg-blue-100 hover:bg-blue-200  rounded-md font-black sm:text-[1rem] text-[0.8rem] flex items-center gap-2 h-fit">مكالمة
             <Image alt="icon"  src={call} className=" w-4"/>
           </Link>
     </div>
