@@ -13,17 +13,18 @@ import {
   mobile,
   villasRent,
   villasSale,
-} from "../Context/context";
+} from "../Utils/Context/context";
 import Card from "../Components/card/card";
 import { CardSlider } from "../Components/Slider/card-slider";
-import SponsoredAds from "../Components/Slider/sponsored-ads";
+import SponsoredAdsSlider from "../Components/Slider/sponsored-ads-slider";
+
 
 
 
 export default function HomePage() {
   return (
     <div className="  sm:px-40 px-4  flex flex-col gap-10  text-end ">
-      <SponsoredAds />
+      <SponsoredAdsSlider />
       <h1 className=" text-xl font-semibold">الفئات الشائعة</h1>
       <div className="  flex flex-wrap gap-8 justify-around items-end">
         {category?.map((el) => (

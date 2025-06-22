@@ -10,7 +10,7 @@ import slider2 from "../../Assets/Images/slider1.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-export default function SponsoredAds() {
+export default function SponsoredAdsSlider() {
   return (
     <div>
       <Swiper

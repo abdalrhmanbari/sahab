@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Cart from '../../Components/card/cart'
 import Image from 'next/image'
-import { carSale, houseRent, houseSale, villasRent, villasSale } from '../../Context/context'
+import { carSale, houseRent, houseSale, villasRent, villasSale } from '../../Utils/Context/context'
 import SponsoredAd from '../../Components/Advertisement/sponsored-ad'
 
 

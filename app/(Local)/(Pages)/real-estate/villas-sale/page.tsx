@@ -1,5 +1,5 @@
 import Cart from '@/app/(Local)/Components/card/cart'
-import { villasSale } from '@/app/(Local)/Context/context'
+import { villasSale } from '@/app/(Local)/Utils/Context/context'
 import Link from 'next/link'
 import React from 'react'
 

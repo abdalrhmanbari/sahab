@@ -1,5 +1,5 @@
 import PageId from '@/app/(Local)/Components/Component/page-id';
-import { mobile } from '@/app/(Local)/Context/context';
+import { mobile } from '@/app/(Local)/Utils/Context/context';
 import Link from 'next/link';
 import React from 'react'
 

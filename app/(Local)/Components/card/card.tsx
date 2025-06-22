@@ -12,8 +12,10 @@ import speed from "../../Assets/Images/speedmeter.png"
 export default function Card({data, link, realEstate, cars} : {data:any, link:any, realEstate:boolean, cars:boolean}) {
 
     return (
-      <Link href={link} className=' max-w-[18rem] min-w-[18rem] h-[24rem]  border border-zinc-200  w-fi  rounded-t-md pb-4 ' key={data.id} >
-        <img alt='' src={data?.img} className=' w-full h-[20rem] object-cover bg-black rounded-t-md ' loading='lazy'/>
+      <Link href={link} className=' max-w-[18rem] min-w-[18rem] h-[24 rem]  border border-zinc-200  w-fi  rounded-t-md pb-4 ' key={data.id} >
+        <div className='w-full h-[20rem] object-cover bg-black rounded-md'>
+        <img alt='' src={data?.img} className='  w-full h-full  rounded-md' loading='lazy'/>
+        </div>
      <div className=' p-4 text-end flex flex-col gap-3'>
      <div className=' flex justify-between items-center'>
             <FavoriteIcon/>

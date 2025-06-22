@@ -1,5 +1,5 @@
 import React from 'react'
-import { carRent, carSale } from '../../Context/context'
+import { carRent, carSale } from '../../Utils/Context/context'
 
 import Link from 'next/link'
 import SponsoredAd from '../../Components/Advertisement/sponsored-ad'

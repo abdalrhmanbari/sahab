@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import SearchIcon from "../Assets/Icon/search-icon";
 import Link from "next/link";
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -56,9 +57,35 @@ const frameworks = [
   },
 ];
 export default function NavBar() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+  const router = useRouter();
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const status = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(status === "true");
+  }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      setLoggedIn(isLoggedIn);
+    }
+  }, []);
+
+  const handleClick = () => {
+    if (loggedIn) {
+      // تسجيل خروج
+      localStorage.removeItem("isLoggedIn");
+      router.push("/");
+      // window.location.reload()
+  } else {
+    // توجيه لصفحة تسجيل الدخول
+    router.push("/log-in");
+    // window.location.reload()
+  }
+  };
   return (
     <header className=" mb-[18rem] lg:mb-[16rem]  ">
       <div className=" fixe top-0 w-1  h-1 bg-[bisque] z-50 fixed   "></div>
@@ -156,18 +183,22 @@ export default function NavBar() {
             </PopoverContent>
           </Popover>
           <div className=" flex justify-between items-center gap-16    ">
-            <Link
-              href={"/log-in"}
+            
+            <Link 
+
+            href={isLoggedIn  ? "/dashboard" : "/log-in"}
               className=" bg-blue-600 hover:bg-blue-700 sm:px-4 sm:py-3 p-2  rounded-md text-white  text-[0.9rem] sm:text-[1.2rem]  "
             >
               انشر إعلانك
             </Link>
-            <Link
-              href={"/log-in"}
-              className=" sm:text-[1.3rem] text-[0.9rem] font-semibold underline decoration-blue-600 underline-offset-8 hover:no-underline   "
-            >
-              تسجيل دخول{" "}
-            </Link>
+            <button      
+      onClick={handleClick}
+      className={`sm:text-[1.3rem] text-[0.9rem] font-semibold   ${
+        isLoggedIn ? "underline decoration-red-600 underline-offset-8 hover:no-underline" : "underline decoration-blue-600 underline-offset-8 hover:no-underline"
+      }`}
+    >
+      {isLoggedIn ? "تسجيل خروج" : "تسجيل دخول"}
+    </button>
           </div>
         </div>
         <div className=" flex justify-between items-center">

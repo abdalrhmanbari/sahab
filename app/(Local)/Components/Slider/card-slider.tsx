@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { villasSale } from "../../Context/context"
+import { villasSale } from "../../Utils/Context/context"
 import Cards from "../card/card"
 
 export function CardSlider({dataBase, realEstate, car, link}:{dataBase:any, realEstate:boolean, car:boolean, link:string}) {

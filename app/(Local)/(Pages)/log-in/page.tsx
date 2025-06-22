@@ -1,76 +1,67 @@
-import React from 'react'
+"use client";
 
-export default function LogIn() {
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+export default function LoginPage() {
+  const router = useRouter();
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const email = e.currentTarget.email.value;
+    const password = e.currentTarget.password.value;
+    // تحقق وهمي للتجريب فقط
+    if (email === "sahab@gmail.com" && password === "123456" ) {
+      localStorage.setItem("isLoggedIn", "true");
+      router.push("/");
+      
+    } else {
+      setError("البريد الإلكتروني أو كلمة المرور خاطئة");
+      
+    }
+  };
+
   return (
-<div className="   gap-4 text-end  flex min-h-full flex-1 flex-col items-center justify-center px-6  lg:px-8 -mt-14 sm:m-0">
-          <h2 className="m-auto mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-            تسجيل دخول ل سحاب
-          </h2>
+    <div className=" flex flex-col items-center gap-4 text-center 2xl:px-40 sm:px-16 px-6   flex-1  justify-center   lg:px-8 -mt-14 sm:m-0" dir="rtl">
+      <form
+        onSubmit={handleLogin}
+        className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm"
+      >
+        <h1 className="m-auto mb-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 " >
+          تسجيل دخول ل سحاب
+        </h1>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
-            <div>
-              <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                اسم
-              </label>
-              <div className="mt-2">
-                <input
-                dir='rtl'
-                  id="name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                إيميل
-              </label>
-              <div className="mt-2">
-                <input
-                dir='rtl'
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder='example@gmail.com'
-                  autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6"
-                />
-              </div>
-            </div>
-
-            <div>
-
-                <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
-                كلمة السر
-                </label>
-           
-              <div className="mt-2">
-                <input
-                dir='rtl'
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6"
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-  )
+     
+        <input
+          type="text"
+          name="name"
+          placeholder=" الأسم"
+          className="w-full p-3 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="البريد الإلكتروني"
+          className="w-full p-3 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="كلمة المرور"
+          className="w-full p-3 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded  transition"
+        >
+          تسجيل الدخول
+        </button>
+      </form>
+    </div>
+  );
 }

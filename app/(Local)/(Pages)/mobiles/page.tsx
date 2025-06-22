@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { mobile } from '../../Context/context'
+import { mobile } from '../../Utils/Context/context'
 import Cart from '../../Components/card/cart'
 
 export default function Mobiles() {

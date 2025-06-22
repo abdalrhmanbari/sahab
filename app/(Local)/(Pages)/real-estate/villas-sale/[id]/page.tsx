@@ -1,4 +1,4 @@
-import { villasRent, villasSale } from "@/app/(Local)/Context/context";
+import { villasRent, villasSale } from "@/app/(Local)/Utils/Context/context";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

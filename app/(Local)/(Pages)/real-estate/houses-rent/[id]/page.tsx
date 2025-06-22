@@ -1,6 +1,6 @@
 import SponsoredAd from '@/app/(Local)/Components/Advertisement/sponsored-ad';
 import PageId from '@/app/(Local)/Components/Component/page-id';
-import { houseRent, houseSale } from '@/app/(Local)/Context/context';
+import { houseRent, houseSale } from '@/app/(Local)/Utils/Context/context';
 import Link from 'next/link';
 import React from 'react'
 

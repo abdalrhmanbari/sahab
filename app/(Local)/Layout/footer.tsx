@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { footerLinks } from "../Context/context";
+import { footerLinks } from "../Utils/Context/context";
 
 
 export default function Footer() {
