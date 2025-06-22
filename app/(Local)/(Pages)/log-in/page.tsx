@@ -18,7 +18,7 @@ export default function LoginPage() {
       
     } else {
       setError("البريد الإلكتروني أو كلمة المرور خاطئة");
-      
+
     }
   };
 
@@ -31,8 +31,14 @@ export default function LoginPage() {
         <h1 className="m-auto mb-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 " >
           تسجيل دخول ل سحاب
         </h1>
-
-     
+        <div className=" flex flex-col  items-start text-[0.8rem] text-blue-400">
+        <span>
+          الايميل: sahab@gmail.com
+        </span>
+          <span>
+             كلمة السر : 123456       
+          </span>
+        </div>
         <input
           type="text"
           name="name"
